@@ -12,6 +12,7 @@ export interface IBooking extends Document {
   slotId: mongoose.Types.ObjectId;
   user: IUser;
   promoCode?: string;
+  quantity: number;
   subtotal: number;
   taxes: number;
   total: number;
@@ -29,6 +30,7 @@ const BookingSchema = new Schema<IBooking>({
     phone: String
   },
   promoCode: String,
+  quantity: { type: Number, default: 1 },
   subtotal: Number,
   taxes: Number,
   total: Number,
