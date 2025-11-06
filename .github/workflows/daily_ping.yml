@@ -1,0 +1,14 @@
+name: Daily render ping
+
+on:
+  schedule:
+    - cron: '0 2,8,14 * * *'
+  workflow_dispatch: 
+
+jobs:
+  curl-website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run cURL on Website
+        run: curl -I https://bookit-backend-1-n1vm.onrender.com
